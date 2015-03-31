@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<eChannel>
+    <ROUTING>
+        <Routing.Name>Tilaus 123</Routing.Name>
+        <Routing.Comment>Postiennakko</Routing.Comment>
+        <Routing.Target>1</Routing.Target>
+        <Routing.Source>123</Routing.Source>
+        <Routing.Account>123456</Routing.Account>
+        <Routing.Mode>0</Routing.Mode>
+        <Routing.Version>2.2</Routing.Version>
+        <Routing.Id>1</Routing.Id>
+        <Routing.Key>d41d8cd98f00b204e9800998ecf8427e</Routing.Key>
+        <Routing.Time>20150108162000</Routing.Time>
+    </ROUTING>
+    <Shipment>
+        <Shipment.Sender>
+            <Sender.Name1>Testi OY</Sender.Name1>
+            <Sender.Name2></Sender.Name2>
+            <Sender.Addr1>Testikatu 1</Sender.Addr1>
+            <Sender.Addr2></Sender.Addr2>
+            <Sender.Addr3></Sender.Addr3>
+            <Sender.Postcode>00000</Sender.Postcode>
+            <Sender.City>Helsinki</Sender.City>
+            <Sender.Country>FI</Sender.Country>
+            <Sender.Vatcode>1001001-1</Sender.Vatcode>
+            <Sender.Phone>+555040040040</Sender.Phone>
+            <Sender.Contractid>123456</Sender.Contractid>
+        </Shipment.Sender>
+        <Shipment.Recipient>
+            <Recipient.Code>123</Recipient.Code>
+            <Recipient.Name1>Matti Meikäläinen</Recipient.Name1>
+            <Recipient.Name2></Recipient.Name2>
+            <Recipient.Addr1>Testikatu 2</Recipient.Addr1>
+            <Recipient.Addr2></Recipient.Addr2>
+            <Recipient.Addr3></Recipient.Addr3>
+            <Recipient.Postcode>00000</Recipient.Postcode>
+            <Recipient.City>Helsinki</Recipient.City>
+            <Recipient.Country>FI</Recipient.Country>
+            <Recipient.Vatcode></Recipient.Vatcode>
+            <Recipient.Phone>0040040040</Recipient.Phone>
+            <Recipient.Email>matti@example.com</Recipient.Email>
+        </Shipment.Recipient>
+        <Shipment.Consignment>
+            <Consignment.Product>2103</Consignment.Product>
+            <Consignment.Reference>AAAAAAA</Consignment.Reference>
+            <Consignment.Parcel>
+                <Parcel.Packagetype>PC</Parcel.Packagetype>
+                <Parcel.Reference></Parcel.Reference>
+            </Consignment.Parcel>
+            <Consignment.AdditionalService>
+                <AdditionalService.ServiceCode>3101</AdditionalService.ServiceCode>
+                <AdditionalService.Specifier name="reference">10000</AdditionalService.Specifier>
+                <AdditionalService.Specifier name="amount">60.00</AdditionalService.Specifier>
+                <AdditionalService.Specifier name="account">FI0000000000000000</AdditionalService.Specifier>
+                <AdditionalService.Specifier name="codbic">NDEAFIHH</AdditionalService.Specifier>
+            </Consignment.AdditionalService>
+            <Consignment.AdditionalService>
+                <AdditionalService.ServiceCode>3139</AdditionalService.ServiceCode>
+            </Consignment.AdditionalService>
+            <Consignment.AdditionalService>
+                <AdditionalService.ServiceCode>3145</AdditionalService.ServiceCode>
+            </Consignment.AdditionalService>
+            <Consignment.AdditionalService>
+                <AdditionalService.ServiceCode>3146</AdditionalService.ServiceCode>
+            </Consignment.AdditionalService>
+        </Shipment.Consignment>
+    </Shipment>
+</eChannel>

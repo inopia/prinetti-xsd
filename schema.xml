@@ -1,0 +1,273 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation><xs:documentation xml:lang="en">
+      XML Schema for validating Prinetti API queries.
+
+      This schema provides checks for data types and basic requirements but doesn't cross check fields for different selected products.
+
+      First we define some types:
+  </xs:documentation></xs:annotation>
+
+  <xs:simpleType name="string255">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="string50">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="string35">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="string20">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="20" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="string10">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="10" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="isoCountry">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{2}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="currency">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z]{3}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hash">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-f]{32}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="strftime">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{14}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="boolInt">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="0" />
+      <xs:enumeration value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="weight">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="unit" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="product">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="2124" />
+      <xs:enumeration value="2101" />
+      <xs:enumeration value="2102" />
+      <xs:enumeration value="2103" />
+      <xs:enumeration value="2104" />
+      <xs:enumeration value="2143" />
+      <xs:enumeration value="2144" />
+      <xs:enumeration value="2145" />
+      <xs:enumeration value="2105" />
+      <xs:enumeration value="2106" />
+      <xs:enumeration value="2127" />
+      <xs:enumeration value="2135" />
+      <xs:enumeration value="2451" />
+      <xs:enumeration value="2401" />
+      <xs:enumeration value="2411" />
+      <xs:enumeration value="2431" />
+      <xs:enumeration value="2421" />
+      <xs:enumeration value="2146" />
+      <xs:enumeration value="2116" />
+      <xs:enumeration value="2108" />
+      <xs:enumeration value="2147" />
+      <xs:enumeration value="2149" />
+      <xs:enumeration value="2150" />
+      <xs:enumeration value="2015" />
+      <xs:enumeration value="2017" />
+      <xs:enumeration value="2020" />
+      <xs:enumeration value="2317" />
+      <xs:enumeration value="2318" />
+      <xs:enumeration value="5003" />
+      <xs:enumeration value="5007" />
+      <xs:enumeration value="5006" />
+      <xs:enumeration value="5022" />
+      <xs:enumeration value="5999" />
+      <xs:enumeration value="5008" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="packageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PC" />
+      <xs:enumeration value="PU" />
+      <xs:enumeration value="ZPF" />
+      <xs:enumeration value="ZPE" />
+      <xs:enumeration value="ZPT" />
+      <xs:enumeration value="CG" />
+      <xs:enumeration value="ZPX" />
+      <xs:enumeration value="PM" />
+      <xs:enumeration value="TB" />
+      <xs:enumeration value="TC" />
+      <xs:enumeration value="TU" />
+      <xs:enumeration value="LTK" />
+      <xs:enumeration value="KA" />
+      <xs:enumeration value="VA" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="additionalServiceCode">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="3101" />
+      <xs:enumeration value="3102" />
+      <xs:enumeration value="3103" />
+      <xs:enumeration value="3104" />
+      <xs:enumeration value="3105" />
+      <xs:enumeration value="3106" />
+      <xs:enumeration value="3108" />
+      <xs:enumeration value="3109" />
+      <xs:enumeration value="3110" />
+      <xs:enumeration value="3111" />
+      <xs:enumeration value="3113" />
+      <xs:enumeration value="3114" />
+      <xs:enumeration value="3115" />
+      <xs:enumeration value="3116" />
+      <xs:enumeration value="3117" />
+      <xs:enumeration value="3118" />
+      <xs:enumeration value="3119" />
+      <xs:enumeration value="3120" />
+      <xs:enumeration value="3128" />
+      <xs:enumeration value="3139" />
+      <xs:enumeration value="3143" />
+      <xs:enumeration value="3145" />
+      <xs:enumeration value="3146" />
+      <xs:enumeration value="3200" />
+      <xs:enumeration value="3201" />
+      <xs:enumeration value="3202" />
+      <xs:enumeration value="3203" />
+      <xs:enumeration value="3205" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="contentCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="D" />
+      <xs:enumeration value="S" />
+      <xs:enumeration value="G" />
+      <xs:enumeration value="M" />
+      <xs:enumeration value="L" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="returnInstruction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="H" />
+      <xs:enumeration value="L" />
+      <xs:enumeration value="E" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:annotation><xs:documentation xml:lang="en">
+      Now the document structure:
+  </xs:documentation></xs:annotation>
+
+  <xs:element name="eChannel"><xs:complexType><xs:all>
+        <xs:element name="ROUTING"><xs:complexType><xs:all>
+              <xs:element name="Routing.Name" type="string255" minOccurs="0" />
+              <xs:element name="Routing.Comment" type="string255" minOccurs="0" />
+              <xs:element name="Routing.Target" type="xs:int" fixed="1" />
+              <xs:element name="Routing.Source" type="xs:positiveInteger" />
+              <xs:element name="Routing.Account" type="xs:positiveInteger" />
+              <xs:element name="Routing.Mode" type="boolInt" />
+              <xs:element name="Routing.Version" type="xs:decimal" fixed="2.2" minOccurs="0" />
+              <xs:element name="Routing.Id" type="xs:nonNegativeInteger" />
+              <xs:element name="Routing.Key" type="hash" />
+              <xs:element name="Routing.Time" type="strftime" minOccurs="0" />
+        </xs:all></xs:complexType></xs:element>
+
+        <xs:element name="Shipment"><xs:complexType><xs:all>
+              <xs:element name="Shipment.Sender"><xs:complexType><xs:all>
+                    <xs:element name="Sender.Name1" type="string35" />
+                    <xs:element name="Sender.Name2" type="string35" minOccurs="0"/>
+                    <xs:element name="Sender.Addr1" type="string35" />
+                    <xs:element name="Sender.Addr2" type="string35" minOccurs="0" />
+                    <xs:element name="Sender.Addr3" type="string35" minOccurs="0" />
+                    <xs:element name="Sender.Postcode" type="string10" />
+                    <xs:element name="Sender.City" type="string35" />
+                    <xs:element name="Sender.Country" type="isoCountry" />
+                    <xs:element name="Sender.Vatcode" type="string20" />
+                    <xs:element name="Sender.Phone" type="string20" minOccurs="0"/>
+                    <xs:element name="Sender.Contractid" type="string10" />
+              </xs:all></xs:complexType></xs:element>
+
+              <xs:element name="Shipment.Recipient"><xs:complexType><xs:all>
+                    <xs:element name="Recipient.Code" type="string50" minOccurs="0" />
+                    <xs:element name="Recipient.Name1" type="string35" />
+                    <xs:element name="Recipient.Name2" type="string35" minOccurs="0"/>
+                    <xs:element name="Recipient.Addr1" type="string35"/>
+                    <xs:element name="Recipient.Addr2" type="string35" minOccurs="0"/>
+                    <xs:element name="Recipient.Addr3" type="string35" minOccurs="0"/>
+                    <xs:element name="Recipient.Postcode" type="string10" />
+                    <xs:element name="Recipient.City" type="string35" />
+                    <xs:element name="Recipient.Country" type="isoCountry"/>
+                    <xs:element name="Recipient.Vatcode" type="string20" minOccurs="0"/>
+                    <xs:element name="Recipient.Phone" type="string20" minOccurs="0"/>
+                    <xs:element name="Recipient.Email" type="string50" minOccurs="0"/>
+              </xs:all></xs:complexType></xs:element>
+              <xs:element name="Shipment.Consignment"><xs:complexType><xs:sequence>
+                    <xs:element name="Consignment.Product" type="product" />
+                    <xs:element name="Consignment.Reference" type="string50" />
+                    <xs:element name="Consignment.Contentcode" type="contentCode" minOccurs="0" />
+                    <xs:element name="Consignment.ReturnInstruction" type="returnInstruction" minOccurs="0" />
+                    <xs:element name="Consignment.Invoicenumber" type="string20" minOccurs="0" />
+                    <xs:element name="Consignment.Merchandicevalue" type="xs:decimal" minOccurs="0" />
+                    <xs:element name="Consignment.Parcel"><xs:complexType><xs:all>
+                          <xs:element name="Parcel.Reference" minOccurs="0" type="string50" />
+                          <xs:element name="Parcel.Packagetype" minOccurs="0" type="packageType" />
+                          <xs:element name="Parcel.Weight" minOccurs="0" type="weight" />
+                          <xs:element name="Parcel.Volume" minOccurs="0" type="xs:decimal" />
+                          <xs:element name="Parcel.Infocode" minOccurs="0" type="xs:int" />
+                          <xs:element name="Parcel.Contents" minOccurs="0" type="string20" />
+                          <xs:element name="Parcel.ParcelService" minOccurs="0" />
+                          <xs:element name="Parcel.ReturnService" type="product" minOccurs="0" />
+                          <xs:element name="Parcel.Contentline" minOccurs="0"><xs:complexType><xs:all>
+                                <xs:element name="Contentline.Description" type="string50" />
+                                <xs:element name="Contentline.Quantity" type="xs:positiveInteger" minOccurs="0" />
+                                <xs:element name="Contentline.Currency" type="currency" minOccurs="0" />
+                                <xs:element name="Contentline.Netweight" type="xs:positiveInteger" />
+                                <xs:element name="Contentline.Value" type="xs:decimal" />
+                                <xs:element name="Contentline.CountryOfOrigin" type="isoCountry" minOccurs="0" />
+                                <xs:element name="Contentline.TariffCode" type="string50" minOccurs="0" />
+                          </xs:all></xs:complexType></xs:element>
+                    </xs:all></xs:complexType></xs:element>
+                    <xs:element name="Consignment.AdditionalService" minOccurs="0" maxOccurs="unbounded"><xs:complexType><xs:sequence>
+                          <xs:element name="AdditionalService.ServiceCode" type="additionalServiceCode" />
+                          <xs:element name="AdditionalService.Specifier" minOccurs="0" maxOccurs="4" />
+                    </xs:sequence></xs:complexType></xs:element>
+                    <xs:element name="Consignment.AdditionalInfo" minOccurs="0"><xs:complexType><xs:sequence>
+                          <xs:element name="AdditionalInfo.Text" type="string35" />
+                    </xs:sequence></xs:complexType></xs:element>
+
+              </xs:sequence></xs:complexType></xs:element>
+        </xs:all></xs:complexType></xs:element>
+  </xs:all></xs:complexType></xs:element>
+</xs:schema>
